@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Issues</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffe6cc;
+      color: #333;
+    }
+
+    /* Header and Navigation Bar */
+    .header {
+      background-color: #994f00;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Form Container */
+    .form-container {
+      max-width: 500px;
+      margin: 40px auto;
+      background-color: #fff8f0;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #080500;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+      font-size: 14px;
+    }
+
+    /* Impact on You section */
+    .impact-group {
+      margin-bottom: 20px;
+    }
+
+    .impact-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+
+    .impact-options {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+
+    .impact-option {
+      width: 30%;
+      padding: 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .impact-option:hover {
+      transform: scale(1.1);
+    }
+
+    .high {
+      background-color: #ff4d4d;
+      color: white;
+    }
+
+    .moderate {
+      background-color: #ffcc00;
+      color: white;
+    }
+
+    .low {
+      background-color: #66cc66;
+      color: white;
+    }
+
+    /* Submit Button Styles */
+    .submit-btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(145deg, #ff6600, #cc5200);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .submit-btn:hover {
+      background: linear-gradient(145deg, #cc5200, #ff6600);
+      transform: translateY(-3px);
+      box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .submit-btn:active {
+      transform: translateY(2px);
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header and Navigation Bar -->
+  <div class="header">Issues</div>
+
+  <!-- Form Container -->
+  <div class="form-container">
+    <h2>Submit Your Issue</h2>
+    <form id="issueForm">
+      <div class="form-group">
+        <label for="issue">Enter your issue:</label>
+        <textarea id="issue" name="issue" rows="4" required></textarea>
+      </div>
+      <div class="impact-group">
+        <label for="impact">Impact on You:</label>
+        <div class="impact-options">
+          <div class="impact-option high" data-impact="high">High</div>
+          <div class="impact-option moderate" data-impact="moderate">Moderate</div>
+          <div class="impact-option low" data-impact="low">Low</div>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    // Set up event listeners for the impact options
+    document.querySelectorAll('.impact-option').forEach(function(option) {
+      option.addEventListener('click', function() {
+        // Clear all selections
+        document.querySelectorAll('.impact-option').forEach(function(opt) {
+          opt.style.opacity = '0.2';
+        });
+        
+        // Highlight the selected option
+        option.style.opacity = '1';
+        document.getElementById('impact').value = option.dataset.impact; // Set the hidden input to the selected value
+      });
+    });
+
+    // Handle form submission
+    document.getElementById('issueForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent actual form submission
+
+      // Perform form validation and submission logic here
+
+      // After successful submission, show a confirmation message
+      alert("Your issue has been submitted successfully!");
+
+      // Redirect to the previous page
+      window.history.back();
+    });
+  </script>
+</body>
+</html>

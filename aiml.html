@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>R23 - CSE Syllabus</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fff3e6;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Prevent page scrolling */
+    }
+
+    /* Header Styles */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px; /* Adjust padding for spacing */
+      background-color: #994f00;
+      color: white;
+      position: absolute;
+      top: 0;
+      width: 98%;
+      z-index: 10;
+      border-radius: 20px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    /* Go Back Button */
+    .go-back-btn {
+      padding: 10px 15px;
+      background-color: #994f00;
+      color: #fff;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .go-back-btn:hover {
+      background-color: #cc7722;
+    }
+
+    /* Download Button */
+    .download-btn {
+      padding: 10px 15px;
+      background-color: #994f00;
+      color: #fff;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .download-btn:hover {
+      background-color: #cc7722;
+    }
+
+    /* Main Content Area */
+    .pdf-container {
+      width: 90%;
+      max-width: 1000px;
+      height: calc(100vh - 120px); /* Adjust for header height and gap */
+      margin: 80px auto 0; /* Add gap between header and PDF */
+      background-color: #fff;
+      border: 2px solid #ffcc99;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      overflow-y: scroll; /* Allow scrolling within the iframe */
+    }
+
+    @media screen and (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .go-back-btn, .download-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+      }
+
+      .pdf-container {
+        height: 60vh; /* Make the PDF container smaller on smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <!-- Go Back Button (left) -->
+    <a href="javascript:history.back()" class="go-back-btn"><img src="https://img.icons8.com/?size=50&id=39977&format=png" style="height: 25px;"></a>
+    
+    <!-- Title in the center -->
+    <h1>AIML R23 SYLLABUS</h1>
+
+    <!-- Download Button (right) -->
+    <a href="https://srkrec.edu.in/files/SYLLABUS/R23/B.Tech_R23_II%20_Year_%20AIML%20_Syllabus%20_FINAL.pdf" download class="download-btn">DOWNLOAD</a>
+  </header>
+
+  <!-- PDF Container -->
+  <div class="pdf-container">
+    <iframe src="https://srkrec.edu.in/files/SYLLABUS/R23/B.Tech_R23_II_Year_CSE_Syllabus_FINAL.pdf"></iframe>
+  </div>
+
+</body>
+</html>
